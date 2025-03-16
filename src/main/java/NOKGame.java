@@ -1,15 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class NOKGames {
+public class NOKGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
+        GameMenu.sayHelloAndNameUser(scanner);
         System.out.println("Find the smallest common multiple of given numbers.");
         while (true) {
             int firstNumber = random.nextInt(101);
@@ -21,11 +18,10 @@ public class NOKGames {
             int answer = Integer.parseInt(stringAnswer);
 
             if (getSmallestCommonMultiple(firstNumber, secondNumber, thirdNumber) == answer) {
-                System.out.println("Correct!");
+                GameMenu.correctAnswer();
+                break;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" +
-                        getSmallestCommonMultiple(firstNumber, secondNumber, thirdNumber) + "'");
-                System.out.println("Let's try again, " + name + "!");
+                GameMenu.notCorrectAnswer(answer, getSmallestCommonMultiple(firstNumber, secondNumber, thirdNumber));
             }
         }
     }
