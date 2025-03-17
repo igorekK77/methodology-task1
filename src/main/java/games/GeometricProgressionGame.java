@@ -1,19 +1,23 @@
+package games;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GeometricProgressionGame {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+public class GeometricProgressionGame implements Games{
 
-        GameMenu.sayHelloAndNameUser(scanner);
-        System.out.println("What number is missing in the progression?");
+    private int correctAnswer;
+    private int answer;
 
-        boolean isFinishGame = startGame(scanner);
-        while (!isFinishGame) {
-            isFinishGame = startGame(scanner);
-        }
+    @Override
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    @Override
+    public int getAnswer() {
+        return answer;
     }
 
     public static List<Integer> generateGeometricProgression() {
@@ -30,13 +34,13 @@ public class GeometricProgressionGame {
         return progression;
     }
 
-    public static boolean startGame(Scanner scanner) {
+    @Override
+    public boolean runGame(Scanner scanner, Random random) {
+        System.out.println("What number is missing in the progression?");
         List<Integer> progression = generateGeometricProgression();
-        Random random = new Random();
-        boolean isFinishGame = false;
 
         int hiddenIndex = random.nextInt(progression.size());
-        int hiddenValue = progression.get(hiddenIndex);
+        correctAnswer = progression.get(hiddenIndex);
         progression.set(hiddenIndex, null);
 
         System.out.print("Question: ");
@@ -49,14 +53,8 @@ public class GeometricProgressionGame {
         }
         System.out.print("\n" + "Your answer: ");
         String answerString = scanner.nextLine();
-        int answer = Integer.parseInt(answerString);
+        answer = Integer.parseInt(answerString);
 
-        if (answer == hiddenValue) {
-            GameMenu.correctAnswer();
-            isFinishGame = true;
-        } else {
-            GameMenu.notCorrectAnswer(answer, hiddenValue);
-        }
-        return isFinishGame;
+        return answer == correctAnswer;
     }
 }
