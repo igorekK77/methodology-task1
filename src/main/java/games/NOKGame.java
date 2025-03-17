@@ -3,7 +3,7 @@ package games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class NOKGame implements Games{
+public class NOKGame implements Games {
     private int correctAnswer;
     private int answer;
 

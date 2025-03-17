@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GeometricProgressionGame implements Games{
+public class GeometricProgressionGame implements Games {
 
     private int correctAnswer;
     private int answer;
