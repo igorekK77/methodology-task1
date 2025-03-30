@@ -3,7 +3,6 @@ import games.Games;
 import games.GeometricProgressionGame;
 import games.NOKGame;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +15,7 @@ public class Main {
                 "1 - Запустить игру НОК (наименьшее общее кратное) \n" +
                 "2 - Запустить игру Геометрическая прогрессия \n" +
                 "0 - Выйти \n" +
-                "Введите номер: " );
+                "Введите номер: ");
         String choice = scanner.nextLine();
         if (choice.equals("1")) {
             game = new NOKGame();
