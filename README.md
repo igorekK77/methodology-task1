@@ -1,6 +1,6 @@
-[Запись игры НОК](https://asciinema.org/a/tXjxo3BnFjgfOwxH8eHFN7Baf)  
-Ссылка:https://asciinema.org/a/tXjxo3BnFjgfOwxH8eHFN7Baf  
-[Запись игры геометрическая прогрессия](https://asciinema.org/a/vv3qQm7Y92Y9QNSDvev6FyNMZ)  
-Ссылка:https://asciinema.org/a/vv3qQm7Y92Y9QNSDvev6FyNMZ  
+[Запись игры НОК]( https://asciinema.org/a/R0QiYDYx004Xfcy0x9xo7nOo2)  
+Ссылка:  https://asciinema.org/a/R0QiYDYx004Xfcy0x9xo7nOo2
+[Запись игры геометрическая прогрессия](https://asciinema.org/a/RZAqeozaedb1Nl19o8iq1C9tA)  
+Ссылка: https://asciinema.org/a/RZAqeozaedb1Nl19o8iq1C9tA 
   
 ![Maintainability](https://api.codeclimate.com/v1/badges/7b0e3252a56e5e2dd77c/maintainability)
