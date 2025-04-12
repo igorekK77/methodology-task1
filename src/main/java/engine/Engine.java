@@ -11,21 +11,25 @@ public class Engine {
     public void startGames(Games game) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        int countWinGame = 0;
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
 
-        boolean isFinishGame = game.runGame(scanner, random);
-        while (!isFinishGame) {
-            System.out.println("'" + game.getAnswer() + "' is wrong answer ;(. Correct answer was '" +
-                    game.getCorrectAnswer() + "'");
-            System.out.println("Let's try again, " + name + "!");
-            isFinishGame = game.runGame(scanner, random);
+        while (countWinGame != 3) {
+            boolean isFinishGame = game.runGame(scanner, random);
+            if (!isFinishGame) {
+                countWinGame = 0;
+                System.out.println("'" + game.getAnswer() + "' is wrong answer ;(. Correct answer was '" +
+                        game.getCorrectAnswer() + "'");
+                System.out.println("Let's try again, " + name + "!");
+            } else {
+                countWinGame++;
+                System.out.println("Correct!");
+            }
         }
-
-        System.out.println("Correct!");
         System.out.println("Congratulations, " + name + "!");
     }
 }
